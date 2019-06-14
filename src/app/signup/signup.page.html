@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>아이디</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omId"></ion-input>
+    <ion-button (click)="checkId()">중복확인</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-label>비밀번호</ion-label>
+    <ion-input type="password" [(ngModel)]="member.omPass"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>메일</ion-label>
+    <ion-input type="mail" [(ngModel)]="member.omMail"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>프로파일</ion-label>
+    <ion-input type="file" (change)="setFile($event)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>별명</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omNick"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>전화번호</ion-label>
+    <ion-input type="number" [(ngModel)]="member.omPhone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>생년월일</ion-label>
+    <ion-datetime #dt picker-format="YYYYMMDD" display-format="YYYYMMDD" 
+    [(ngModel)]="member.omBirth"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>성별</ion-label>
+    <ion-select [(ngModel)]="member.omTrans">
+      <ion-select-option value="1">남</ion-select-option>
+      <ion-select-option value="2">여</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>우편번호</ion-label>
+    <ion-input disabled [(ngModel)]="member.omZipcode"></ion-input>
+    <btn-daum-address [options]="options" (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+  </ion-item>
+  <ion-item>
+    <ion-label>주소</ion-label>
+    <ion-input disabled [(ngModel)]="member.omAddr1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>상세주소</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omAddr2"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>기타정보</ion-label>
+    <ion-textarea [(ngModel)]="member.omInfo"></ion-textarea>
+  </ion-item>
+  <ion-button (click)="doSignup()" shape="round" color="primary" expand="block" >회원가입</ion-button>
+</ion-content>
