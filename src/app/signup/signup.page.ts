@@ -3,14 +3,6 @@ import { Member } from '../vo/member';
 import { CommonService } from '../common/common.service';
 import { DaumAddressComponent } from 'ng2-daum-address/da.component';
 
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-
-const baseUrl = "http://192.168.0.2:88"
-const httpFile2 = {
-  headers : new HttpHeaders(
-    {'Content-Type':'multipart/form-data'}
-  )
-}
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -22,8 +14,7 @@ export class SignupPage implements OnInit {
   option = {};
   @ViewChild('dt') dt;
 
-  constructor(private cs:CommonService,
-    private _http:HttpClient) {
+  constructor(private cs:CommonService) {
     this.option['class'] = 'color: #fff;background-color: #0275d8;border-color: #0275d8;';
   }
 
@@ -40,16 +31,8 @@ export class SignupPage implements OnInit {
       return false;
     }
     this.member.omBirth = this.member.omBirth.split('T')[0].split('-').join('');
-    var url = '/test';
+    var url = '/member';
     this.cs.postFile(url,this.member).subscribe(
-      res=>{
-        console.log(res);
-      },
-      err=>{
-        console.log(err);
-      }
-    )
-    this.postFile2(url,this.member).subscribe(
       res=>{
         console.log(res);
       },
@@ -63,18 +46,6 @@ export class SignupPage implements OnInit {
     this.member.omProfileFile = evt.target.files[0];
   }
 
-  makeFormData(obj):FormData{
-    const formData = new FormData();
-    for(var key in obj){
-      formData.append(key,obj[key]);
-    }
-    return formData;
-  }
-  postFile2(url,obj){
-    url = baseUrl + url;
-    const data = this.makeFormData(obj);
-    return this._http.post(url,data,httpFile2);
-  }
   checkId(){
     var url = "/member/" + this.member.omId;
     console.log(this.cs);

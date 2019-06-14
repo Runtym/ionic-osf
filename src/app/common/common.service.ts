@@ -35,4 +35,13 @@ export class CommonService {
     const data = this.makeFormData(obj);
     return this._http.post(url,data,httpFile);
   }
+  
+  postJson(url,obj){
+    url = baseUrl + url;
+    return this._http.post(url,obj,httpJson);
+  }
+  delete(url,param?){
+    url = baseUrl + url;
+    return this._http.delete(url);
+  }
 }

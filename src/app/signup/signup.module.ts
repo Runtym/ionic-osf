@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { SignupPage } from './signup.page';
 import { NgDaumAddressModule } from 'ng2-daum-address';
+import { Tab1PageModule } from '../tab1/tab1.module';
+import { Tab2Page } from '../tab2/tab2.page';
 
 const routes: Routes = [
   {
@@ -22,7 +24,8 @@ const routes: Routes = [
     IonicModule,
     HttpClientModule,
     RouterModule.forChild(routes),
-    NgDaumAddressModule
+    NgDaumAddressModule,
+    Tab1PageModule
   ],
   declarations: [SignupPage]
 })

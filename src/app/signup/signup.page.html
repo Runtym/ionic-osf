@@ -44,16 +44,21 @@
   </ion-item>
   <ion-item>
     <ion-label>우편번호</ion-label>
-    <ion-input disabled [(ngModel)]="member.omZipcode"></ion-input>
-    <btn-daum-address [options]="options" (result)="setDaumAddressApi($event)" [options]="daumAddressOptions"></btn-daum-address>
+    <ion-input disabled 
+    [(ngModel)]="member.omZipcode"></ion-input>
+    <btn-daum-address 
+    (result)="setDaumAddressApi($event)">
+    </btn-daum-address>
   </ion-item>
   <ion-item>
     <ion-label>주소</ion-label>
-    <ion-input disabled [(ngModel)]="member.omAddr1"></ion-input>
+    <ion-input disabled 
+    [(ngModel)]="member.omAddr1"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>상세주소</ion-label>
-    <ion-input type="text" [(ngModel)]="member.omAddr2"></ion-input>
+    <ion-input type="text" 
+    [(ngModel)]="member.omAddr2"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>기타정보</ion-label>

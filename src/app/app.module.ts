@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {NgDaumAddressModule} from 'ng2-daum-address';
+import { Tab2Page } from './tab2/tab2.page';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

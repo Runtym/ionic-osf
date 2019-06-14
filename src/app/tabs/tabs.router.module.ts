@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { SignupPage } from '../signup/signup.page';
+import { LoginPage } from '../login/login.page';
+import { HomePage } from '../home/home.page';
 
 const routes: Routes = [
   {
@@ -40,6 +42,14 @@ const routes: Routes = [
         component:SignupPage
       },
       {
+        path:'login',
+        component:LoginPage
+      },
+      {
+        path:'home',
+        component:HomePage
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
@@ -48,7 +58,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/login',
     pathMatch: 'full'
   }
 ];
