@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common/common.service';
 import { Member } from '../vo/member';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,8 @@ export class HomePage implements OnInit {
   members:Member[];
   baseImgUrl:string = 'http://localhost:88/img/'
   constructor(private cs:CommonService,
-    private ac:AlertController) { 
-    
+    private ac:AlertController,
+    private router:Router) { 
   }
 
   ngOnInit() {
@@ -61,7 +62,7 @@ export class HomePage implements OnInit {
     })
     await alert1.present();
   }
-  doModify(omNo:number){
-    console.log(omNo);
+  doModify(omId:string){
+    this.router.navigateByUrl('/tabs/signup/'+omId)
   }
 }

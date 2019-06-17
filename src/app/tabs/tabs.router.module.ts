@@ -42,6 +42,10 @@ const routes: Routes = [
         component:SignupPage
       },
       {
+        path: 'signup/:omId',
+        component:SignupPage
+      },
+      {
         path:'login',
         component:LoginPage
       },

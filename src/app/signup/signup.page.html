@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-title>{{btnStr}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-item>
     <ion-label>아이디</ion-label>
-    <ion-input type="text" [(ngModel)]="member.omId"></ion-input>
-    <ion-button (click)="checkId()">중복확인</ion-button>
+    <ion-input type="text" [(ngModel)]="member.omId" [disabled]="isModify"></ion-input>
+    <ion-button (click)="checkId()" *ngIf="!isModify">중복확인</ion-button>
   </ion-item>
   <ion-item>
     <ion-label>비밀번호</ion-label>
@@ -17,6 +17,12 @@
   <ion-item>
     <ion-label>메일</ion-label>
     <ion-input type="mail" [(ngModel)]="member.omMail"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="member.omProfile">
+    <ion-label>프사</ion-label>
+    <ion-avatar class="ion-text-left">
+      <img src="{{member.omProfile}}">
+    </ion-avatar>
   </ion-item>
   <ion-item>
     <ion-label>프로파일</ion-label>
@@ -64,5 +70,5 @@
     <ion-label>기타정보</ion-label>
     <ion-textarea [(ngModel)]="member.omInfo"></ion-textarea>
   </ion-item>
-  <ion-button (click)="doSignup()" shape="round" color="primary" expand="block" >회원가입</ion-button>
+  <ion-button (click)="doSignup()" shape="round" color="primary" expand="block" >{{btnStr}}</ion-button>
 </ion-content>
