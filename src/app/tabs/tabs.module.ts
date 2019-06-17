@@ -8,6 +8,7 @@ import { SignupPageModule} from'../signup/signup.module';
 import { TabsPage } from './tabs.page';
 import { LoginPageModule } from '../login/login.module';
 import { HomePageModule } from '../home/home.module';
+import { MoviePageModule } from '../movie/movie.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { HomePageModule } from '../home/home.module';
     TabsPageRoutingModule,
     SignupPageModule,
     LoginPageModule,
-    HomePageModule
+    HomePageModule,
+    MoviePageModule
   ],
   declarations: [TabsPage]
 })

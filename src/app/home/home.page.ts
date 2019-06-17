@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
   members:Member[];
-  baseImgUrl:string = 'http://localhost:88/img/'
+  baseImgUrl:string = 'http://osf.javajs.net:88/img/'
   constructor(private cs:CommonService,
     private ac:AlertController,
     private router:Router) { 
