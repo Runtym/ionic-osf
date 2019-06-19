@@ -17,7 +17,7 @@ const httpFile = {
   providedIn: 'root'
 })
 export class CommonService {
-
+  
   constructor(private _http:HttpClient) { }
   get(url,params?){
     url = baseUrl + url; 

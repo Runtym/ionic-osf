@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common/common.service';
 import { StorageService } from '../common/storage.service';
 import { Member } from '../vo/member';
-import { elementStyleProp } from '@angular/core/src/render3';
-import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
 
 @Component({
